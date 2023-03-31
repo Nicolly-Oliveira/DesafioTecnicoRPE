@@ -8,10 +8,12 @@ describe('Validar a obrigatoriedade dos campos com *',
     env: {
       user: 'admin',
       password: 'admin',
-      nome: 'Nicolly Oliveira',
-      cpf: '701.080.694-27',
+      nomeClienteAtivo: 'Nicolly Oliveira',
+      cpfClienteAtivo: '701.080.694-27',
+      nomeClienteInativo: 'Natalice Oliveira',
+      cpfClienteInativo: '570.513.054-68',
       statusAtivo: 'Ativo',
-      statusInativo: 'Ativo',
+      statusInativo: 'Inativo',
       saldo: '100.00'
     },
   }, () => {
@@ -20,24 +22,31 @@ describe('Validar a obrigatoriedade dos campos com *',
         cy.login(Cypress.env('user'), Cypress.env('password'));
         cy.validarSucessoLogin();
         cy.limparBaseClientes();
-        cy.cadastrarClienteAtivo(Cypress.env('nome'), Cypress.env('cpf'), Cypress.env('statusAtivo'), Cypress.env('saldo'));
-        cy.cadastrarClienteInativo(Cypress.env('nome'), Cypress.env('cpf'), Cypress.env('statusInativo'), Cypress.env('saldo'));
+        cy.cadastrarClienteAtivo(Cypress.env('nomeClienteAtivo'), Cypress.env('cpfClienteAtivo'), Cypress.env('statusAtivo'), Cypress.env('saldo'));
+        cy.validarSucessoCadastroCliente();
+        cy.cadastrarClienteInativo(Cypress.env('nomeClienteInativo'), Cypress.env('cpfClienteInativo'), Cypress.env('statusInativo'), Cypress.env('saldo'));
+        cy.validarSucessoCadastroCliente();
     })
 
-  it('Usar filtro cliente ativo', () => {
-    cy.verificarFiltroClienteAtivo();
-  })
+    it('Usar filtro cliente ativo', () => {
+        cy.verificarFiltroClienteAtivo();
+    })
 
-  it('Usar filtro cliente inativo', () => {
-    cy.verificarFiltroClienteInativo();
-  })
+    it('Usar filtro cliente inativo', () => {
+        cy.verificarFiltroClienteInativo();
+    })
 
-  it('Deletar cliente', () => {
-    cy.excluirCadastrarCliente(Cypress.env('nome'));
-  })
+    it('Deletar cliente', () => {
+        cy.excluirCadastrarCliente(Cypress.env('nomeClienteInativo'));
+    })
 
-  it('Visualizar cliente', () => {
-    cy.visualizarCadastrarCliente(Cypress.env('nome'));
-  })
+    it('Visualizar cliente', () => {
+        cy.visualizarCadastrarCliente(Cypress.env('nomeClienteAtivo'));
+    })
+
+    afterEach('Limpar base e fazer logoff', () => {
+        cy.limparBaseClientes();
+        cy.logoff();
+    })
 
 })

@@ -53,30 +53,32 @@ Cypress.Commands.add('cadastrarClienteInativo', (nome, cpf, status, saldo) => {
     cy.xpath(locators.CLIENTE.STATUS).should('be.visible').select(status).should('have.value', 'false')
     cy.xpath(locators.CLIENTE.SALDO).should('be.visible').type(saldo).should('have.value', saldo);
     cy.xpath(locators.BTN.SALVAR).should('be.visible').click();
-    cy.xpath(locators.MESSAGE.SUCCESS_INCLUIR_CLIENTE).should('be.visible').and('contain', 'Cliente salvo com sucesso');
 })
 
 Cypress.Commands.add('verificarFiltroClienteAtivo', () => {
     cy.xpath(locators.MENU.QA).should('be.visible').realHover();
     cy.xpath(locators.MENU.CLIENTE).should('be.visible').realHover();
-    cy.xpath(locators.MENU.CLIENTE_INCLUIR).should('be.visible').realHover().realTouch();
+    cy.xpath(locators.MENU.CLIENTE_LISTAR).should('be.visible').realHover().realTouch();
     cy.xpath(locators.BTN.PESQUISAR).should('be.visible').click();
     cy.xpath(locators.BTN.FILTRO_ATIVO).should('be.visible').click();
+    var classes = []
     cy.xpath(locators.LISTAR_CLIENTE.TABELA_CLIENTES)
             .invoke('attr', 'class').then(($value) => {
-                cy.log($value).should('contain', 'success').and('not.contain', 'danger');
+                classes.map($value);
+                cy.log(classes).should('contain', 'success').and('not.contain', 'danger');
             });
 })
 
 Cypress.Commands.add('verificarFiltroClienteInativo', (nome, cpf, status, saldo) => {
     cy.xpath(locators.MENU.QA).should('be.visible').realHover();
     cy.xpath(locators.MENU.CLIENTE).should('be.visible').realHover();
-    cy.xpath(locators.MENU.CLIENTE_INCLUIR).should('be.visible').realHover().realTouch();
+    cy.xpath(locators.MENU.CLIENTE_LISTAR).should('be.visible').realHover().realTouch();
     cy.xpath(locators.BTN.PESQUISAR).should('be.visible').click();
     cy.xpath(locators.BTN.FILTRO_ATIVO).should('be.visible').click();
+    var value = [];
     cy.xpath(locators.LISTAR_CLIENTE.TABELA_CLIENTES)
-            .invoke('attr', 'class').then(($value) => {
-                cy.log($value).should('contain', 'danger').and('not.contain', 'success');
+            .invoke('attr', 'class').then((value) => {
+                cy.log(value).should('contain', 'danger').and('not.contain', 'success');
             });
 }) 
 
@@ -92,6 +94,16 @@ Cypress.Commands.add('excluirCadastrarCliente', (nome) => {
     cy.xpath(locators.MENU.CLIENTE_LISTAR).should('be.visible').realHover().realTouch();
     cy.xpath(locators.LISTAR_CLIENTE.NOME_PESQUISA).should('be.visible').type(nome).and('have.value', nome);
     cy.xpath(locators.LISTAR_CLIENTE.NOME_TABELA(nome)).should('not.exist');
+})
+
+Cypress.Commands.add('perquisarClienteSemFiltro', () => {
+    cy.xpath(locators.MENU.QA).should('be.visible').realHover();
+    cy.xpath(locators.MENU.CLIENTE).should('be.visible').realHover();
+    cy.xpath(locators.MENU.CLIENTE_LISTAR).should('be.visible').realHover().realTouch();
+    cy.xpath(locators.LISTAR_CLIENTE.NOME_PESQUISA).should('be.visible').and('be.empty');
+    cy.xpath(locators.LISTAR_CLIENTE.DATA_DE_VALIDADE).should('be.visible').and('be.empty');
+    cy.xpath(locators.BTN.PESQUISAR).should('be.visible').click();
+    cy.xpath(locators.LISTAR_CLIENTE.TABELA_CLIENTES).should('not.be.visible');
 })
 
 Cypress.Commands.add('visualizarCadastrarCliente', (nome) => {

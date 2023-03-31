@@ -27,11 +27,11 @@ describe('Pagina Login',
   })
 
   it('Login sem credenciais', () => {
-    cy.login(' ', ' ');
+    cy.login('', '');
     cy.validarFalhaLogin();
-    cy.login('admin', ' ');
+    cy.login('admin', '');
     cy.validarFalhaLogin();
-    cy.login(' ', 'admin');
+    cy.login('', 'admin');
     cy.validarFalhaLogin();
   })
 
