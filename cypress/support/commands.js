@@ -9,11 +9,11 @@ Cypress.Commands.add('login', (user, passwd) => {
 })
 
 Cypress.Commands.add('validarSucessoLogin', () => {
-    cy.xpath(locators.LOGIN.MESSAGE_SUCCESS_LOGIN).should('be.visible').and('contain', 'Bem vindo ao Desafio');
+    cy.xpath(locators.MESSAGE.SUCCESS_LOGIN).should('be.visible').and('contain', 'Bem vindo ao Desafio');
 })
 
 Cypress.Commands.add('validarFalhaLogin', () => {
-    cy.xpath(locators.LOGIN.MESSAGE_ERRO).should('be.visible').and('contain', 'Credenciais inválidas');
+    cy.xpath(locators.MESSAGE.ERRO_LOGIN).should('be.visible').and('contain', 'Credenciais inválidas');
 })
 
 Cypress.Commands.add('logoff', () => {
@@ -30,7 +30,7 @@ Cypress.Commands.add('cadastrarClienteAtivo', (nome, cpf, status, saldo) => {
     cy.xpath(locators.CLIENTE.STATUS).should('be.visible').select(status).should('have.value', 'true')
     cy.xpath(locators.CLIENTE.SALDO).should('be.visible').type(saldo).should('have.value', saldo);
     cy.xpath(locators.BTN.SALVAR).should('be.visible').click();
-    cy.xpath(locators.LOGIN.MESSAGE_SUCCESS_INCLUIR_CLIENTE).should('be.visible').and('contain', 'Cliente salvo com sucesso');
+    cy.xpath(locators.MESSAGE.SUCCESS_INCLUIR_CLIENTE).should('be.visible').and('contain', 'Cliente salvo com sucesso');
 })
 
 Cypress.Commands.add('excluirCadastrarCliente', (nome) => {
@@ -51,7 +51,6 @@ Cypress.Commands.add('limparBaseClientes', () => {
     cy.xpath(locators.MENU.QA).should('be.visible').realHover();
     cy.xpath(locators.MENU.CLIENTE).should('be.visible').realHover();
     cy.xpath(locators.MENU.CLIENTE_LISTAR).should('be.visible').realHover().realTouch();
-    cy.wait(3000);
     cy.xpath(locators.BTN.PESQUISAR).should('be.visible').click();
     cy.xpath(locators.BTN.LIMPAR_BASE).should('be.visible').click();
     
@@ -61,11 +60,10 @@ Cypress.Commands.add('cadastrarTransacaoComValorIgualSaldo', (nome, valorADebita
     cy.xpath(locators.MENU.QA).should('be.visible').realHover();
     cy.xpath(locators.MENU.TRANSACAO).should('be.visible').realHover();
     cy.xpath(locators.MENU.TRANSACAO_INCLUIR).should('be.visible').realHover().realTouch();
-    cy.wait(3000);
     cy.xpath(locators.TRANSACAO.CLIENTE).should('be.visible').select(nome).should('contain', nome)
     cy.xpath(locators.TRANSACAO.VALOR).should('be.visible').type(valorADebitarIgualSaldo).should('have.value', valorADebitarIgualSaldo)
     cy.xpath(locators.BTN.SALVAR).should('be.visible').click();
-    cy.xpath(locators.LOGIN.MESSAGE_SUCCESS_INCLUIR_TRANSACAO).should('be.visible').and('contain', 'Venda realizada com sucesso'); 
+    cy.xpath(locators.MESSAGE.SUCCESS_INCLUIR_TRANSACAO).should('be.visible').and('contain', 'Venda realizada com sucesso'); 
 })
 
 Cypress.Commands.add('cadastrarTransacaoComValorMenorSaldo', (nome, valorADebitarMenorSaldo) => {
@@ -76,7 +74,18 @@ Cypress.Commands.add('cadastrarTransacaoComValorMenorSaldo', (nome, valorADebita
     cy.xpath(locators.TRANSACAO.CLIENTE).should('be.visible').select(nome).should('contain', nome)
     cy.xpath(locators.TRANSACAO.VALOR).should('be.visible').type(valorADebitarMenorSaldo).should('have.value', valorADebitarMenorSaldo)
     cy.xpath(locators.BTN.SALVAR).should('be.visible').click();
-    cy.xpath(locators.LOGIN.MESSAGE_SUCCESS_INCLUIR_TRANSACAO).should('be.visible').and('contain', 'Venda realizada com sucesso'); 
+    cy.xpath(locators.MESSAGE.SUCCESS_INCLUIR_TRANSACAO).should('be.visible').and('contain', 'Venda realizada com sucesso'); 
+})
+
+Cypress.Commands.add('cadastrarTransacaoComValorMaiorSaldo', (nome, valorADebitarMaiorSaldo) => {
+    cy.xpath(locators.MENU.QA).should('be.visible').realHover();
+    cy.xpath(locators.MENU.TRANSACAO).should('be.visible').realHover();
+    cy.xpath(locators.MENU.TRANSACAO_INCLUIR).should('be.visible').realHover().realTouch();
+    cy.wait(3000);
+    cy.xpath(locators.TRANSACAO.CLIENTE).should('be.visible').select(nome).should('contain', nome)
+    cy.xpath(locators.TRANSACAO.VALOR).should('be.visible').type(valorADebitarMaiorSaldo).should('have.value', valorADebitarMaiorSaldo)
+    cy.xpath(locators.BTN.SALVAR).should('be.visible').click();
+    cy.xpath(locators.MESSAGE.ERRO_INCLUIR_TRANSACAO).should('be.visible').and('contain', 'Venda não realizada, saldo insuficiente'); 
 })
 
 Cypress.Commands.add('verificarDebitoValorIgual', (nome, saldo, valorADebitarIgualSaldo) => {

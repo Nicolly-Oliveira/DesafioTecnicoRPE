@@ -3,11 +3,7 @@ const locators = {
         USER: `//input[@name='username']`,
         PASSWORD: `//input[@name='password']`,
         BTN_LOGIN: `//button[contains(text(),'Sign in')]`,
-        BTN_LOGOFF: `//input[@value='SAIR']`,
-        MESSAGE_SUCCESS_LOGIN: `//h1[contains(text(),'Bem vindo ao Desafio')]`,
-        MESSAGE_SUCCESS_INCLUIR_CLIENTE: `//strong[contains(text(),'Cliente salvo com sucesso')]`,
-        MESSAGE_SUCCESS_INCLUIR_TRANSACAO: `//strong[contains(text(),'Venda realizada com sucesso')]`,
-        MESSAGE_ERRO: `//label[contains(text(),'Credenciais inválidas')]`
+        BTN_LOGOFF: `//input[@value='SAIR']`
     },
     MENU: {
         HOME: `//a[@title='Inicio']`,
@@ -58,6 +54,13 @@ const locators = {
         CPF_TABELA: cpf => `//tbody/tr[contains(.,'${cpf}')]/td[2]`,
         DATA_TABELA: data => `//tbody/tr[contains(.,'${data}')]/td[3]`,
         VALOR_TABELA: valor => `//tbody/tr[contains(.,'${valor}')]/td[4]`,
+    },
+    MESSAGE: {
+        SUCCESS_LOGIN: `//h1[contains(text(),'Bem vindo ao Desafio')]`,
+        SUCCESS_INCLUIR_CLIENTE: `//strong[contains(text(),'Cliente salvo com sucesso')]`,
+        SUCCESS_INCLUIR_TRANSACAO: `//strong[contains(text(),'Venda realizada com sucesso')]`,
+        ERRO_INCLUIR_TRANSACAO: `//strong[contains(text(),'Venda não realizada, saldo insuficiente')]`,
+        ERRO_LOGIN: `//label[contains(text(),'Credenciais inválidas')]`
     },
     
 }

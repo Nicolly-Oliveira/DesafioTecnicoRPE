@@ -32,9 +32,15 @@ describe('Fluxo realizar compra',
     
   })
 
-  it('Realizar compra com saldo MENOR ao valor da compra', () => {
+  it('Realizar compra com saldo MAIOR ao valor da compra', () => {
     cy.cadastrarTransacaoComValorMenorSaldo(Cypress.env('nome'), Cypress.env('valorADebitarMenorSaldo'));
-    cy.verificarDebitoValorMenor(Cypress.env('nome'),  Cypress.env('saldo'), Cypress.env('valorADebitarMenorSaldo'));
+    cy.verificarDebitoValorMenor(Cypress.env('nome'), Cypress.env('saldo'), Cypress.env('valorADebitarMenorSaldo'));
+    
+  })
+
+  it('Realizar compra com saldo MENOR ao valor da compra', () => {
+    cy.cadastrarTransacaoComValorMenorSaldo(Cypress.env('nome'), Cypress.env('valorADebitarMaiorSaldo'));
+    cy.verificarDebitoValorMenor(Cypress.env('nome'), Cypress.env('saldo'), Cypress.env('valorADebitarMaiorSaldo'));
     
   })
 
