@@ -42,7 +42,8 @@ const locators = {
         VALIDADE_TABELA: nome => `//tbody/tr/td[contains(.,'${nome}')]/following-sibling::td[3]`,
         CLIENTE_ATIVO: `//tbody/tr[@class='success']`,
         CLIENTE_BLOCK: `//tbody/tr[@class='danger']`,
-        VALIDAR_STATUS: nome => `//td[contains(text(),'${nome}')]/ancestor::tr`
+        VALIDAR_STATUS: nome => `//td[contains(text(),'${nome}')]/ancestor::tr`,
+        TABELA_CLIENTES: `//tbody/tr`
     },
 
     TRANSACAO: {
@@ -58,6 +59,8 @@ const locators = {
     MESSAGE: {
         SUCCESS_LOGIN: `//h1[contains(text(),'Bem vindo ao Desafio')]`,
         SUCCESS_INCLUIR_CLIENTE: `//strong[contains(text(),'Cliente salvo com sucesso')]`,
+        CAMPO_OBRIGATORIO_NOME_INCLUIR_CLIENTE: `//input[@id='nome']/following-sibling::small`,
+        CAMPO_OBRIGATORIO_CPF_INCLUIR_CLIENTE: `//input[@id='cpf']/following-sibling::small`,
         SUCCESS_INCLUIR_TRANSACAO: `//strong[contains(text(),'Venda realizada com sucesso')]`,
         ERRO_INCLUIR_TRANSACAO: `//strong[contains(text(),'Venda não realizada, saldo insuficiente')]`,
         ERRO_LOGIN: `//label[contains(text(),'Credenciais inválidas')]`

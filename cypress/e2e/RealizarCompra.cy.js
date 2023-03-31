@@ -3,7 +3,7 @@
 import locators from '../support/locators'
 import '../support/commands'
 
-describe('Fluxo realizar compra', 
+describe('Realizar compra', 
   {
     env: {
       user: 'admin',
@@ -24,6 +24,7 @@ describe('Fluxo realizar compra',
     cy.limparBaseClientes();
     cy.wait(3000);
     cy.cadastrarClienteAtivo(Cypress.env('nome'), Cypress.env('cpf'), Cypress.env('status'), Cypress.env('saldo'));
+    cy.validarSucessoCadastroCliente();
   })
 
   it('Realizar compra com saldo IGUAL ao valor da compra', () => {
