@@ -42,7 +42,7 @@ describe('Fluxo realizar compra',
     cy.cadastrarTransacaoComValorMaiorSaldo(Cypress.env('nome'), Cypress.env('valorADebitarMaiorSaldo'));    
   })
 
-  afterEach('Realizar cadastro', () => {
+  afterEach('Limpar base e fazer logoff', () => {
     cy.limparBaseClientes();
     cy.logoff();
   })
