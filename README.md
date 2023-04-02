@@ -138,7 +138,7 @@ avaliar teste      |   02/04/2023   | 02/04/2023
 
    #### Screenshots/Video
    
-   Para mais informações [acessar relatorio] (https://nicolly-oliveira.github.io/DesafioTecnicoRPE/).
+   Para mais informações [acessar relatorio](https://nicolly-oliveira.github.io/DesafioTecnicoRPE/)
 
    #### Desktop
     - OS: [e.g. Windows]
