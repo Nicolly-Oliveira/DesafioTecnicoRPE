@@ -116,3 +116,146 @@ executar teste     |   01/04/2023   | 01/04/2023
 avaliar teste      |   02/04/2023   | 02/04/2023
 
 ## 6 - Reportar Bug
+
+ ### 6.1 - Bug ID-1
+ 
+   #### Compra é realizada quando cliente não te saldo suficiente
+  
+   Clientes com saldo menores que o valor da compra estão conseguindo efetuar um comprar no sistema.
+
+   #### Para Reproduzir
+   
+   Cadastrar um cliente com saldo x, ir na página de criar de criar transação, preencher o formulario com o valor x+10 e clicar no botão de salvar.
+   Uma mensagem de sucesso irá ser apresentada ao usuário na tela e a transação é cadastrada. 
+
+   #### Comportamento Esperado
+   
+   Era esperado que o sistema não aprovasse essa transação e surgisse uma mensagem de saldo insuficiente na tela.
+
+   #### Priority
+   
+   P0 - Prioridade Máxima
+
+   #### Screenshots/Video
+   
+   Para mais informações acessar relatorio.
+
+   #### Desktop
+    - OS: [e.g. Windows]
+    - Browser [e.g. chrome]
+    - Resolution [e.g. 2560 X 1289]
+
+
+### 6.2 - Bug ID-2
+ 
+   #### Compra é realizada e o valor não é debitado do saldo do cliente
+  
+   Clientes ao efetuar uma compra, o valor dessa compra não está sendo debitada do saldo, deixando o cliente livre para fazer quantas transações quiser.
+
+   #### Para Reproduzir
+   
+   Cadastrar um cliente com saldo x, ir na página de criar de criar transação, preencher o formulario com o valor da compra e clicar no botão de salvar.
+   Uma mensagem de sucesso irá ser apresentada ao usuário na tela e a transação é cadastrada.
+   Vá até até a página lista cliente, pesquisar pelo cliente e verificar o valor do saldo.
+
+   #### Comportamento Esperado
+   
+   Era esperado que o sistema debitasse do saldo do cliente o valor da compra que foi efetuada por ele.
+
+   #### Priority
+   
+   P0 - Prioridade Máxima
+
+   #### Screenshots/Video
+   
+   Para mais informações acessar relatorio.
+
+   #### Desktop
+    - OS: [e.g. Windows]
+    - Browser [e.g. chrome]
+    - Resolution [e.g. 2560 X 1289]
+    
+    
+### 6.3 - Bug ID-3
+ 
+   #### Campo obrigatório não apresenta validação
+  
+   Campos que possuem * na label da pagina de listar clientes, não estão realizando validações para checar se o campo está sendo preenchido para realizar a pesquisa.
+
+   #### Para Reproduzir
+   
+   Ir a pagina de listar clientes, não preencher os campos com * na label e clicar no botão pesquisar.
+
+   #### Comportamento Esperado
+   
+   Era esperado que o sistema solicitasse o preenchimento dos inputs ao tentar realizar a pesquisa sem o campo preenchido.
+
+   #### Priority
+   
+   P4 - Prioridade Baixa
+
+   #### Screenshots/Video
+   
+   Para mais informações acessar relatorio.
+
+   #### Desktop
+    - OS: [e.g. Windows]
+    - Browser [e.g. chrome]
+    - Resolution [e.g. 2560 X 1289]
+    
+    
+### 6.4 - Bug ID-4
+ 
+   #### Botão de exclusão do cliente não apresenta o comportamento esperado
+  
+   O botão de escluir cliente da página de listar cliente não realiza a exclusão do cliente ao ser acionado.  
+
+   #### Para Reproduzir
+   
+   Ir a pagina de listar clientes, pesquisar um cliente e clicar no botão de escluir no final da linha.
+   Realize a busca novamente pelo cliente e verá que ainda consta o cadastro no sistema.
+
+   #### Comportamento Esperado
+   
+   Era esperado que o sistema excluisse o cliente apois a usuário clicar no botão excluir
+
+   #### Priority
+   
+   P2 - Prioridade Media
+
+   #### Screenshots/Video
+   
+   Para mais informações acessar relatorio.
+
+   #### Desktop
+    - OS: [e.g. Windows]
+    - Browser [e.g. chrome]
+    - Resolution [e.g. 2560 X 1289]
+    
+    
+### 6.5 - Bug ID-5
+ 
+   #### Filtros de cliente bloqueado e ativo não realiza o filtro
+  
+   Filtros de cliente bloqueado e ativo não realiza o filtro ao serem acionados, permanecendo a listagem com todos o clientes na tela.  
+
+   #### Para Reproduzir
+   
+   Ir a pagina de listar clientes, realizar a pesquisa e acionar um botão de filtro cliente bloqueado ou ativo. 
+
+   #### Comportamento Esperado
+   
+   Era esperado que o sistema realizasse um fitro na listagem de clientes quando solicitado por meio do botão cliente bloqueado e ativo.
+
+   #### Priority
+   
+   P4 - Prioridade Baixa
+
+   #### Screenshots/Video
+   
+   Para mais informações acessar relatorio.
+
+   #### Desktop
+    - OS: [e.g. Windows]
+    - Browser [e.g. chrome]
+    - Resolution [e.g. 2560 X 1289]
