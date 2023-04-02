@@ -132,9 +132,9 @@ avaliar teste      |   02/04/2023   | 02/04/2023
    
    Era esperado que o sistema não aprovasse essa transação e surgisse uma mensagem de saldo insuficiente na tela.
 
-   #### Priority
+   #### Prioridade
    
-   P0 - Prioridade Máxima
+   <kbd>P0 - Prioridade Máxima</kbd>
 
    #### Screenshots/Video
    
@@ -162,9 +162,9 @@ avaliar teste      |   02/04/2023   | 02/04/2023
    
    Era esperado que o sistema debitasse do saldo do cliente o valor da compra que foi efetuada por ele.
 
-   #### Priority
+   #### Prioridade
    
-   P0 - Prioridade Máxima
+   <kbd>P0 - Prioridade Máxima</kbd>
 
    #### Screenshots/Video
    
@@ -190,9 +190,9 @@ avaliar teste      |   02/04/2023   | 02/04/2023
    
    Era esperado que o sistema solicitasse o preenchimento dos inputs ao tentar realizar a pesquisa sem o campo preenchido.
 
-   #### Priority
+   #### Prioridade
    
-   P4 - Prioridade Baixa
+   <kbd>P4 - Prioridade Baixa</kbd>
 
    #### Screenshots/Video
    
@@ -219,9 +219,9 @@ avaliar teste      |   02/04/2023   | 02/04/2023
    
    Era esperado que o sistema excluisse o cliente apois a usuário clicar no botão excluir
 
-   #### Priority
+   #### Prioridade
    
-   P2 - Prioridade Media
+   <kbd>P2 - Prioridade Media</kbd>
 
    #### Screenshots/Video
    
@@ -247,9 +247,9 @@ avaliar teste      |   02/04/2023   | 02/04/2023
    
    Era esperado que o sistema realizasse um fitro na listagem de clientes quando solicitado por meio do botão cliente bloqueado e ativo.
 
-   #### Priority
+   #### Prioridade
    
-   P4 - Prioridade Baixa
+   <kbd>P4 - Prioridade Baixa</kbd>
 
    #### Screenshots/Video
    
