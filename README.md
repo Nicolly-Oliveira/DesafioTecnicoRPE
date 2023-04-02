@@ -57,15 +57,15 @@ Baseados nos teste de funcionalidade, este são alguns dos cenário que precisam
 
  - Cenário de teste 01: 
  
-![Cenário_de_Teste01](https://user-images.githubusercontent.com/95318147/229331932-1c8bb774-1a91-4d83-9151-f6d988e3146e.PNG)
+![CETES1](https://user-images.githubusercontent.com/95318147/229340210-235d6ff1-3958-4225-9d9f-311ee7e84857.PNG)
 
  - Cenário de teste 02:
  
-![Cenário_de_Teste02](https://user-images.githubusercontent.com/95318147/229331933-c1d8c993-9aff-4427-8162-4f56db238979.PNG)
+![CETES2](https://user-images.githubusercontent.com/95318147/229340208-bd466d72-5ce6-42ca-88e2-855e16e20276.PNG)
 
  - Cenário de teste 03:
  
-![Cenário_de_Teste03](https://user-images.githubusercontent.com/95318147/229331934-19b441b4-a251-45ec-b220-0c33b0f438d8.PNG)
+![CETES3](https://user-images.githubusercontent.com/95318147/229340209-8ba8a2aa-ec58-4aeb-a969-307bce965bb0.PNG)
 
 ### 3.2 - Casos de Teste
 
