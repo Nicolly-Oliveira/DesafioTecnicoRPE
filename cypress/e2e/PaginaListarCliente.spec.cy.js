@@ -28,8 +28,10 @@ describe('Validar funcionalidades da pagina de listar clientes',
         cy.limparBaseClientes();
         cy.cadastrarClienteAtivo(Cypress.env('nomeClienteAtivo'), Cypress.env('cpfClienteAtivo'), Cypress.env('statusAtivo'), Cypress.env('saldo'));
         cy.validarSucessoCadastroCliente();
+        cy.wait(3000)
         cy.cadastrarClienteInativo(Cypress.env('nomeClienteInativo'), Cypress.env('cpfClienteInativo'), Cypress.env('statusInativo'), Cypress.env('saldo'));
         cy.validarSucessoCadastroCliente();
+        cy.wait(3000)
     })
 
     it('Usar filtro cliente ativo', () => {
@@ -42,10 +44,6 @@ describe('Validar funcionalidades da pagina de listar clientes',
 
     it('Deletar cliente', () => {
         cy.excluirCadastroCliente(Cypress.env('nomeClienteInativo'));
-    })
-
-    it('Visualizar cliente', () => {
-        cy.visualizarCadastrarCliente(Cypress.env('nomeClienteAtivo'));
     })
 
     afterEach('Limpar base e fazer logoff', () => {

@@ -1,9 +1,28 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
   e2e: {
     setupNodeEvents(on, config) {
-      this.baseUrl = "http://54.166.20.145:9080/desafioqa"
+      require('cypress-mochawesome-reporter/plugin')(on);
+    },
+  },
+});
+
+const { defineConfig } = require('cypress');
+
+module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'Relatório de Teste - Desafio RPE',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
+  e2e: {
+    setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
   },
 });

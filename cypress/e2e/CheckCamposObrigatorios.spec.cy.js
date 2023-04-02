@@ -12,6 +12,8 @@ describe('Validar a obrigatoriedade dos campos com *',
     env: {
       user: 'admin',
       password: 'admin',
+      nome: 'Nicolly Oliveira',
+      cpf: '701.080.694-12',
       statusAtivo: 'Ativo',
       saldo: '100.00'
     },
@@ -21,10 +23,12 @@ describe('Validar a obrigatoriedade dos campos com *',
         cy.login(Cypress.env('user'), Cypress.env('password'));
         cy.validarSucessoLogin();
         cy.limparBaseClientes();
-        cy.cadastrarClienteSemNomeECPF(Cypress.env('statusAtivo'), Cypress.env('saldo'));
+        cy.cadastrarClienteAtivo(Cypress.env('nome'), Cypress.env('cpf'), Cypress.env('statusAtivo'), Cypress.env('saldo'));
+        cy.wait(3000)
     })
 
     it('Verificar aviso de campo obrigatorio ao tentar salvar cliente sem nome e cpf', () => {
+        cy.cadastrarClienteSemNomeECPF(Cypress.env('statusAtivo'), Cypress.env('saldo'));
         cy.validarObrigatoriedadeCampoNome();
         cy.validarObrigatoriedadeCampoCPF();
     })
