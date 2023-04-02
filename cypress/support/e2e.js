@@ -14,7 +14,11 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commandsCliente'
+import './commandsLogin'
+import './commandsTelas'
+import './commandsTransacao'
+import './commandsValidar'
 import "cypress-real-events";
 
 // Alternatively you can use CommonJS syntax:

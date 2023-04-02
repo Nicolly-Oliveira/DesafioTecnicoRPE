@@ -1,15 +1,17 @@
 /// <reference types="cypress"/>
 
 import locators from '../support/locators'
-import '../support/commands'
+import '../support/commandsLogin'
+import '../support/commandsTelas'
+import '../support/commandsCliente'
+import '../support/commandsTransacao'
+import '../support/commandsValidar'
 
 describe('Validar a obrigatoriedade dos campos com *',
   {
     env: {
       user: 'admin',
       password: 'admin',
-      nome: '',
-      cpf: '',
       statusAtivo: 'Ativo',
       saldo: '100.00'
     },
@@ -19,7 +21,7 @@ describe('Validar a obrigatoriedade dos campos com *',
         cy.login(Cypress.env('user'), Cypress.env('password'));
         cy.validarSucessoLogin();
         cy.limparBaseClientes();
-        cy.cadastrarClienteAtivo(Cypress.env('nome'), Cypress.env('cpf'), Cypress.env('statusAtivo'), Cypress.env('saldo'));
+        cy.cadastrarClienteSemNomeECPF(Cypress.env('statusAtivo'), Cypress.env('saldo'));
     })
 
     it('Verificar aviso de campo obrigatorio ao tentar salvar cliente sem nome e cpf', () => {

@@ -1,7 +1,8 @@
 /// <reference types="cypress"/>
 
 import locators from '../support/locators'
-import '../support/commands'
+import '../support/commandsLogin'
+import '../support/commandsValidar'
 
 describe('Pagina Login',
   {
@@ -27,11 +28,11 @@ describe('Pagina Login',
   })
 
   it('Login sem credenciais', () => {
-    cy.login('', '');
+    cy.loginSemDados();
     cy.validarFalhaLogin();
-    cy.login('admin', '');
+    cy.loginSemSenha('admin');
     cy.validarFalhaLogin();
-    cy.login('', 'admin');
+    cy.loginSemEmail('admin');
     cy.validarFalhaLogin();
   })
 

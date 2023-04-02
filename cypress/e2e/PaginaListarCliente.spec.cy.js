@@ -1,9 +1,13 @@
 /// <reference types="cypress"/>
 
 import locators from '../support/locators'
-import '../support/commands'
+import '../support/commandsLogin'
+import '../support/commandsTelas'
+import '../support/commandsCliente'
+import '../support/commandsTransacao'
+import '../support/commandsValidar'
 
-describe('Validar a obrigatoriedade dos campos com *',
+describe('Validar funcionalidades da pagina de listar clientes',
   {
     env: {
       user: 'admin',
@@ -37,7 +41,7 @@ describe('Validar a obrigatoriedade dos campos com *',
     })
 
     it('Deletar cliente', () => {
-        cy.excluirCadastrarCliente(Cypress.env('nomeClienteInativo'));
+        cy.excluirCadastroCliente(Cypress.env('nomeClienteInativo'));
     })
 
     it('Visualizar cliente', () => {

@@ -1,7 +1,11 @@
 /// <reference types="cypress"/>
 
 import locators from '../support/locators'
-import '../support/commands'
+import '../support/commandsLogin'
+import '../support/commandsTelas'
+import '../support/commandsCliente'
+import '../support/commandsTransacao'
+import '../support/commandsValidar'
 
 describe('Realizar compra', 
   {
