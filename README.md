@@ -114,3 +114,5 @@ projetar teste     |   30/03/2023   | 30/03/2023
 implementar teste  |   31/03/2023   | 31/03/2023
 executar teste     |   01/04/2023   | 01/04/2023
 avaliar teste      |   02/04/2023   | 02/04/2023
+
+## 6 - Reportar Bug
