@@ -53,7 +53,7 @@ Mais informações sobre os tipos de teste e abordagens utilizadas, ir para o se
 
 ### 3.1 - Cenários de Teste 
 
-Baseados nos teste de funcionalidade, este são alguns dos cenário que precisam ser validados no sistema.
+Baseados nos testes de funcionalidade, este são alguns dos cenário que precisam ser validados no sistema.
 
  - Cenário de teste 01: 
  
@@ -70,7 +70,7 @@ Baseados nos teste de funcionalidade, este são alguns dos cenário que precisam
 ### 3.2 - Casos de Teste
 
 Para os cenários de teste temos os casos de testes relacionados.
-Segue o passo a passo de como é realizado o teste baseados nos casos de teste descritos abaixo.
+Segue o passo a passo de como sãp realizados os testes baseados nos casos de teste descritos abaixo.
 
  - Caso de teste 01 (Segundo a ISO-2119-3 e Gherkin):
 
@@ -119,13 +119,13 @@ avaliar teste      |   02/04/2023   | 02/04/2023
 
  ### 6.1 - Bug ID-1
  
-   #### Compra é realizada quando cliente não te saldo suficiente
+   #### Compra é realizada quando cliente não tem saldo suficiente
   
-   Clientes com saldo menores que o valor da compra estão conseguindo efetuar um comprar no sistema.
+   Clientes com saldo menor que o valor da compra estão conseguindo realizar uma compra no sistema.
 
    #### Para Reproduzir
    
-   Cadastrar um cliente com saldo x, ir na página de criar de criar transação, preencher o formulario com o valor x+10 e clicar no botão de salvar.
+   Cadastrar um cliente com saldo x, ir na página de incluir transação, preencher o formulário com o valor x+10 e clicar no botão de salvar.
    Uma mensagem de sucesso irá ser apresentada ao usuário na tela e a transação é cadastrada. 
 
    #### Comportamento Esperado
@@ -208,7 +208,7 @@ avaliar teste      |   02/04/2023   | 02/04/2023
  
    #### Botão de exclusão do cliente não apresenta o comportamento esperado
   
-   O botão de escluir cliente da página de listar cliente não realiza a exclusão do cliente ao ser acionado.  
+   O botão de excluir cliente da página de listar cliente não realiza a exclusão do cliente ao ser acionado.  
 
    #### Para Reproduzir
    
@@ -217,7 +217,7 @@ avaliar teste      |   02/04/2023   | 02/04/2023
 
    #### Comportamento Esperado
    
-   Era esperado que o sistema excluisse o cliente apois a usuário clicar no botão excluir
+   Era esperado que o sistema excluisse o cliente após o usuário clicar no botão excluir
 
    #### Prioridade
    
